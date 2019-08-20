@@ -14,7 +14,7 @@ export class CarService {
   constructor(private http: HttpClient) { }
 
   getCarList(): Observable<Car[]>{
-    return this.http.get<Car[]>(this.BASE_URL)
+    return this.http.get<Car[]>(`${this.BASE_URL}/cars`)
   }
 
   getFilteredCarList(type: string, value: string): Observable<Car[]>{
@@ -22,7 +22,7 @@ export class CarService {
   }
 
   getCar(id: string): Observable<Car> {
-    return this.http.get<Car>(`${this.BASE_URL}/${id}`);
+    return this.http.get<Car>(`${this.BASE_URL}/cars/${id}`);
   }
 
   getFilters() {

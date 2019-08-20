@@ -19,7 +19,7 @@ router.get('/filters', (req, res, next) => {
 });
 
 
-router.get('/', (req, res, next) => {
+router.get('/cars', (req, res, next) => {
   req.collection.find({})
     .toArray()
     .then(results => res.json(results))
@@ -34,7 +34,7 @@ router.get('/filter/:type/:value', (req, res, next) => {
     .catch(err => res.send(err));
 });
 
-router.get('/:id', (req, res, next) => {
+router.get('/cars/:id', (req, res, next) => {
   const _id = ObjectID(req.params.id);
   req.collection.findOne({ _id })
     .then(results => res.json(results))
