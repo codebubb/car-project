@@ -13,11 +13,11 @@ export class CarService {
 
   constructor(private http: HttpClient) { }
 
-  getCarList(): Observable<Car[]>{
-    return this.http.get<Car[]>(`${this.BASE_URL}/cars`)
+  getCarList(): Observable<Car[]> {
+    return this.http.get<Car[]>(`${this.BASE_URL}/cars`);
   }
 
-  getFilteredCarList(type: string, value: string): Observable<Car[]>{
+  getFilteredCarList(type: string, value: string): Observable<Car[]> {
     return this.http.get<Car[]>(`${this.BASE_URL}/filter/${type}/${value}`);
   }
 
